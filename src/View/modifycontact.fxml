@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:id="rootPane" stylesheets="@../Main/main.css" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets bottom="20.0" top="20.0" right="20.0" left="20.0" />
+    </padding>
+        <VBox GridPane.columnIndex="2">
+            <Label fx:id="contactTitle" styleClass="section-title">Modify Customer</Label>
+            <HBox alignment="center" prefHeight="40" GridPane.columnIndex="1">
+                <Label fx:id="contactIdLabel" prefHeight="40" prefWidth="100" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="contactIdField" disable="true" prefHeight="40" prefWidth="100" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <padding>
+                    <Insets bottom="5.0" top="20.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label fx:id="contactNameLabel" prefHeight="40" prefWidth="100" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="contactNameField" prefHeight="40" prefWidth="100" promptText="Contact Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label fx:id="contactEmailLabel" prefHeight="40" prefWidth="100" text="Email" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="contactEmailField" prefHeight="40" prefWidth="100" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox spacing="10" alignment="bottom_right"
+                  GridPane.columnIndex="1" GridPane.rowIndex="12">
+                <Button fx:id="saveButton" text="Save"
+                        onAction="#handleSaveContactButtonAction"/>
+                <Button fx:id="cancelButton" text="Cancel"
+                        onAction="#handleCancelButtonAction"/>
+            </HBox>
+    </VBox>
+</GridPane>

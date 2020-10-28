@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:id="rootPane" stylesheets="@../Main/main.css" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets bottom="20.0" top="20.0" right="20.0" left="20.0" />
+    </padding>
+    <VBox>
+        <VBox GridPane.columnIndex="2">
+            <Label fx:id="appointmentTitle" styleClass="section-title">Modify Appointment</Label>
+            <HBox alignment="center" GridPane.columnIndex="1" prefHeight="40">
+                <Label text="ID"
+                       fx:id="appointmentIdLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1" ></Label>
+                <TextField fx:id="appointmentIdField" disable="true" promptText="Auto Gen - Disabled"
+                           prefWidth="100" prefHeight="40"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <padding>
+                    <Insets bottom="5.0" top="20.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Title"
+                       fx:id="titleLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="2" ></Label>
+                <TextField fx:id="titleField" promptText="Title"
+                           prefWidth="100" prefHeight="40"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Description"
+                       fx:id="descriptionLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="3" ></Label>
+                <TextField fx:id="descriptionField" promptText="Description"
+                           prefWidth="100" prefHeight="40"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Location"
+                       fx:id="locationLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <TextField fx:id="locationField" promptText="Location"
+                           prefWidth="100" prefHeight="40"
+                           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Contact"
+                       fx:id="contactLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <ComboBox fx:id="contactBoxField" prefWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                </ComboBox>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Type"
+                       fx:id="typeLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <TextField fx:id="typeField" promptText="Type"
+                           prefWidth="100" prefHeight="40"
+                           GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Start Time/Date"
+                       fx:id="startLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <DatePicker fx:id="startTimeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <children>
+                    <Label
+                            text="Start Time:"
+                            fx:id="startTimeLabel"
+                            prefWidth="200" prefHeight="40"
+                            GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                    <ComboBox fx:id="startHour" prefHeight="27.0" prefWidth="83.0" promptText="Hour" />
+                    <ComboBox fx:id="startMin" prefHeight="27.0" prefWidth="99.0" promptText="Minute" />
+                </children>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="End Time/Date"
+                       fx:id="endLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <DatePicker fx:id="endTimeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <children>
+                    <Label
+                            text="End Time:"
+                            fx:id="endTimeLabel"
+                            prefWidth="200" prefHeight="40"
+                            GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                    <ComboBox fx:id="endHour" onAction="#updateDropdown" prefHeight="27.0" prefWidth="83.0" promptText="Hour" />
+                    <ComboBox fx:id="endMin" prefHeight="27.0" prefWidth="99.0" promptText="Minute" />
+                </children>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="Customer ID"
+                       fx:id="customerIdLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <ComboBox fx:id="customerBoxField" prefWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                </ComboBox>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+            <HBox alignment="center" prefHeight="40">
+                <Label text="User"
+                       fx:id="userLabel"
+                       prefWidth="200" prefHeight="40"
+                       GridPane.columnIndex="0" GridPane.rowIndex="4" ></Label>
+                <ComboBox fx:id="userBoxField" prefWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                </ComboBox>
+                <padding>
+                    <Insets bottom="5.0" top="5.0" />
+                </padding>
+            </HBox>
+        </VBox>
+        <HBox spacing="10" alignment="bottom_right"
+              GridPane.columnIndex="1" GridPane.rowIndex="12">
+            <Button fx:id="saveButton" text="Save"
+                    onAction="#handleSaveAppointmentButtonAction"/>
+            <Button fx:id="cancelButton" text="Cancel"
+                    onAction="#handleCancelButtonAction"/>
+        </HBox>
+    </VBox>
+</GridPane>

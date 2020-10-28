@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ComboBox?>
+
+<GridPane fx:id="rootPane" alignment="center" hgap="10" stylesheets="@../Main/main.css" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Text fx:id="appointmentTitle" styleClass="title" GridPane.columnIndex="0" GridPane.rowIndex="0">Appointments</Text>
+    <HBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <VBox styleClass="main-section">
+            <TabPane layoutX="26.0" layoutY="62.0" prefHeight="462.0" prefWidth="809.0" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                    <Tab fx:id="ReportsByMonth" text="Total Appointments by Type">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TableView fx:id="typeTotalTable" layoutX="26.0" layoutY="6.0" prefHeight="259.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <columns>
+                                            <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
+                                            <TableColumn fx:id="colTypeTotal" prefWidth="75.0" text="Total" />
+                                        </columns>
+                                        <items>
+                                        </items>
+                                    </TableView>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="ReportsContactByMonth" text="Total Appointments By Month">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <TableView fx:id="monthTotalTable" layoutX="26.0" layoutY="6.0" prefHeight="259.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <columns>
+                                            <TableColumn fx:id="colMonth" prefWidth="75.0" text="Month" />
+                                            <TableColumn fx:id="colMonthTotal" prefWidth="75.0" text="Total" />
+                                        </columns>
+                                        <items>
+                                        </items>
+                                    </TableView>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="locationReports" text="Total Appointments by Location">
+                        <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="769.0">
+                                <children>
+                                    <TableView fx:id="locationTableView" layoutX="26.0" layoutY="6.0" prefHeight="259.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <columns>
+                                            <TableColumn fx:id="colLocation" prefWidth="175.0" text="Location" />
+                                            <TableColumn fx:id="colLocationTotal" prefWidth="75.0" text="Total" />
+                                        </columns>
+                                        <items>
+                                        </items>
+                                    </TableView>
+                                </children>
+                            </AnchorPane>
+                        </content>
+                    </Tab>
+                    <Tab fx:id="ReportsSchedule" text="Contacts Schedule">
+                        <content>
+                            <VBox minHeight="0.0" minWidth="0.0" prefHeight="432.0" prefWidth="769.0">
+                                <children>
+                                    <VBox>
+                                        <padding>
+                                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                        </padding>
+                                        <ComboBox fx:id="contactBoxField"
+                                                  onAction="#handleContactBoxAction"
+                                                  prefWidth="100" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        </ComboBox>
+                                    </VBox>
+                                    <TableView fx:id="appointmentTableView" layoutX="26.0" layoutY="6.0" prefHeight="259.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <columns>
+                                            <TableColumn fx:id="appointmentId" text="ID" >
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="appointmentId"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="title" text="Title">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="title"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="description" text="Description">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="description"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="type" text="Type">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="type"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="startTime" text="Start Date and Time">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="formattedLocalStart"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="endTime" text="End Date and Time">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="formattedLocalEnd"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="customerId" text="Customer ID">
+                                                <cellValueFactory>
+                                                    <PropertyValueFactory property="customerId"/>
+                                                </cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                        <items>
+                                        </items>
+                                    </TableView>
+                                </children>
+                            </VBox>
+                        </content>
+                    </Tab>
+                </tabs>
+            </TabPane>
+        </VBox>
+    </HBox>
+    <HBox alignment="BOTTOM_RIGHT" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Button fx:id="appointmentButton" onAction="#handleAppointmentButtonAction" text="Appointments" />
+        <Button fx:id="contactButton" onAction="#handleContactButtonAction" text="Contacts" />
+        <Button fx:id="customerButton" onAction="#handleCustomerButtonAction" text="Customers" />
+        <Button fx:id="exitButton" onAction="#handleExitButtonAction" text="Exit" />
+        <padding>
+            <Insets right="20.0" />
+        </padding>
+    </HBox>
+</GridPane>

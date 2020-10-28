@@ -1,0 +1,14 @@
+.title {
+    -fx-font-size: 18px;
+    -fx-text-inner-color: blue;
+    -fx-text-fill: blue;
+}
+.section-title {
+    -fx-font-weight: bold;
+}
+.main-section {
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-border-color: grey;
+    -fx-border-radius: 5px;
+}
